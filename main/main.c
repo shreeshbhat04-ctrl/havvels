@@ -36,20 +36,22 @@
 
 static const char *TAG = "COEX_TEST";
 
-#define WIFI_SSID "Sridhar-Maruthi"
-#define WIFI_PASS "maruthi1979"
-#define SERVER_IP "192.168.0.108" // Your laptop IP
+#define WIFI_SSID "QRG-RnD-5G"
+#define WIFI_PASS "havells!@#$%"
+#define SERVER_IP "10.220.4.127" // Your laptop Wi-Fi IP (same network as ESP32)
 #define SERVER_PORT 5000
 
 /* ============ Channel Planning Config ============ */
-// Wi-Fi: 1, 6, or 11  |  Zigbee 802.15.4: 15, 20, or 25
-// Channel 1 (Wi-Fi) and Channel 25 (Zigbee) = ZERO spectral overlap
+// Wi-Fi channel is decided by the AP, not us (WIFI_CHANNEL is just a scan hint)
+// AP uses CH1 (2412 MHz, 2401-2423 MHz)
+// Zigbee CH13 (2415 MHz) = MAXIMUM overlap with Wi-Fi CH1
 #define WIFI_CHANNEL 1
-#define ZIGBEE_CHANNEL 25
+#define ZIGBEE_CHANNEL 13
 
 /* ============ Interference Duty Cycle Config ============ */
-// Adjustable: 1 = aggressive (near-continuous), 100 = light interference
-#define INTERFERENCE_DELAY_MS 1
+// Minimum 10ms to guarantee at least 1 FreeRTOS tick (100Hz default)
+// Lower = more aggressive interference, but must be >= 10
+#define INTERFERENCE_DELAY_MS 10
 
 static TaskHandle_t wifi_task_handle = NULL;
 static volatile bool wifi_connected = false;

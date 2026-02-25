@@ -1,12 +1,12 @@
 {
     "version":            "1.2",
     "project_name":       "Haavvvels",
-    "project_version":    "v5.5.3",
+    "project_version":    "93408c5-dirty",
     "project_path":       "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.3",
     "build_dir":          "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/build_h2",
     "config_file":        "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/sdkconfig",
-    "config_defaults":    "",
+    "config_defaults":    "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/sdkconfig.defaults",
     "bootloader_elf":     "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/build_h2/bootloader/bootloader.elf",
     "app_elf":            "Haavvvels.elf",
     "app_bin":            "Haavvvels.bin",
@@ -1255,7 +1255,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/build_h2/esp-idf/main/libmain.a",
-            "sources": [ "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/main/main.c" ],
+            "sources": [ "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/main/main.c", "C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/main/coex_packet.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {

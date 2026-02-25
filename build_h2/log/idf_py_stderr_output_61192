@@ -1,0 +1,63 @@
+Command: C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32h2 --revision 0 --decode-panic backtrace C:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\build_h2\Haavvvels.elf C:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\build_h2\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.3\tools\idf.py' '-B' 'build_h2' '-p' 'COM10'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM10 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM10 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40806b2a: [0;33mrestore_stack_pointer[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/portasm.S[0m[0m:[1;31m725[0m
+[0m--- 0x4083c2d0: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x4083efd0: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x4083c2da: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x408065b8: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408065b8: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408065b8: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408065a4: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m651[0m
+[0m--- 0x408065b0: [0;33mvPortYield[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m649[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x42020140: [0;33mieee802154_transmit_internal[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/ieee802154/driver/esp_ieee802154_dev.c[0m[0m:[1;31m952[0m
+[0m--- 0x4080213c: [0;33misr_handle_rx_phase_rx_abort[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/ieee802154/driver/esp_ieee802154_dev.c[0m[0m:[1;31m585[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m--- 0x408064ea: [0;33mvPortClearInterruptMaskFromISR[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m514[0m
+[0m--- 0x4080657c: [0;33mvPortExitCritical[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c[0m[0m:[1;31m627[0m
+[0m--- 0x40019cb2: [0;33m__swbuf_r[0m[0m in [0;32mROM[0m
+[0m--- 0x40800001: [0;33m_vector_table[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.3/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0m

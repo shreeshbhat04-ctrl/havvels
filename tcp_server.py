@@ -35,8 +35,8 @@ PACKET_FORMAT = "<HHQBbBbBH64sH"
 PACKET_SIZE = struct.calcsize(PACKET_FORMAT)
 
 # Rolling window size for jitter and throughput calculation
-WINDOW_SIZE = 50
-REPORT_EVERY = 10  # Print stats every N packets
+WINDOW_SIZE = 1000
+REPORT_EVERY = 1000  # Print stats every N packets
 
 
 def main():
@@ -49,6 +49,7 @@ def main():
         while True:
             conn, addr = s.accept()
             with conn:
+                conn.settimeout(30.0)  # 30s timeout for stale connections
                 logger.info(f"\n{'='*80}")
                 logger.info(f"Connected by {addr}")
                 logger.info(f"{'='*80}")
@@ -69,61 +70,69 @@ def main():
                 # Throughput tracking
                 throughput_window = collections.deque(maxlen=WINDOW_SIZE)  # (timestamp, bytes)
 
+                buf = b""
                 while True:
-                    data = conn.recv(PACKET_SIZE)
-                    if not data:
+                    try:
+                        chunk = conn.recv(4096)
+                    except socket.timeout:
+                        logger.info("Connection timed out (no data for 30s)")
                         break
+                    if not chunk:
+                        break
+                    buf += chunk
 
-                    if len(data) != PACKET_SIZE:
-                        continue
+                    # Process all complete packets in the buffer
+                    while len(buf) >= PACKET_SIZE:
+                        data = buf[:PACKET_SIZE]
+                        buf = buf[PACKET_SIZE:]
 
-                    fields = struct.unpack(PACKET_FORMAT, data)
-                    header, seq, ts, mode, rssi, lqi, tx_power, channel, p_len, payload, crc = fields
+                        fields = struct.unpack(PACKET_FORMAT, data)
+                        header, seq, ts, mode, rssi, lqi, tx_power, channel, p_len, payload, crc = fields
 
-                    if header != 0xAA55:
-                        continue
+                        if header != 0xAA55:
+                            continue
 
-                    now = time.time()
-                    total_packets += 1
+                        now = time.time()
+                        total_packets += 1
 
-                    # --- PER (sequence gap) ---
-                    if expected_seq is not None and seq > expected_seq:
-                        lost = seq - expected_seq
-                        lost_packets += lost
-                    expected_seq = seq + 1
+                        # --- PER (sequence gap) ---
+                        if expected_seq is not None and seq > expected_seq:
+                            lost = seq - expected_seq
+                            lost_packets += lost
+                        expected_seq = seq + 1
 
-                    per = (lost_packets / (total_packets + lost_packets)) * 100
+                        per = (lost_packets / (total_packets + lost_packets)) * 100
 
-                    # --- Inter-arrival jitter ---
-                    arrival_times.append(now)
-                    if len(arrival_times) >= 2:
-                        delta_ms = (arrival_times[-1] - arrival_times[-2]) * 1000.0
-                        inter_arrival_deltas.append(delta_ms)
+                        # --- Inter-arrival jitter ---
+                        arrival_times.append(now)
+                        if len(arrival_times) >= 2:
+                            delta_ms = (arrival_times[-1] - arrival_times[-2]) * 1000.0
+                            inter_arrival_deltas.append(delta_ms)
 
-                    avg_latency_ms = 0.0
-                    jitter_ms = 0.0
-                    if len(inter_arrival_deltas) > 1:
-                        avg_latency_ms = sum(inter_arrival_deltas) / len(inter_arrival_deltas)
-                        mean = avg_latency_ms
-                        variance = sum((d - mean) ** 2 for d in inter_arrival_deltas) / len(inter_arrival_deltas)
-                        jitter_ms = variance ** 0.5  # standard deviation
+                        avg_latency_ms = 0.0
+                        jitter_ms = 0.0
+                        if len(inter_arrival_deltas) > 1:
+                            avg_latency_ms = sum(inter_arrival_deltas) / len(inter_arrival_deltas)
+                            mean = avg_latency_ms
+                            variance = sum((d - mean) ** 2 for d in inter_arrival_deltas) / len(inter_arrival_deltas)
+                            jitter_ms = variance ** 0.5  # standard deviation
 
-                    # --- Throughput ---
-                    throughput_window.append((now, len(data)))
-                    throughput_kbps = 0.0
-                    if len(throughput_window) >= 2:
-                        time_span = throughput_window[-1][0] - throughput_window[0][0]
-                        if time_span > 0:
-                            total_bytes = sum(b for _, b in throughput_window)
-                            throughput_kbps = (total_bytes / 1024.0) / time_span
+                        # --- Throughput ---
+                        throughput_window.append((now, len(data)))
+                        throughput_kbps = 0.0
+                        if len(throughput_window) >= 2:
+                            time_span = throughput_window[-1][0] - throughput_window[0][0]
+                            if time_span > 0:
+                                total_bytes = sum(b for _, b in throughput_window)
+                                throughput_kbps = (total_bytes / 1024.0) / time_span
 
-                    # --- Print every N packets ---
-                    if total_packets % REPORT_EVERY == 0:
-                        logger.info(
-                            f"{seq:>6} | {rssi:>5} | {tx_power:>4}dB | {channel:>3} | "
-                            f"{avg_latency_ms:>8.1f}ms | {jitter_ms:>6.2f}ms | "
-                            f"{throughput_kbps:>7.2f}KB/s | {per:>5.2f}%"
-                        )
+                        # --- Print every N packets ---
+                        if total_packets % REPORT_EVERY == 0:
+                            logger.info(
+                                f"{seq:>6} | {rssi:>5} | {tx_power:>4}dB | {channel:>3} | "
+                                f"{avg_latency_ms:>8.1f}ms | {jitter_ms:>6.2f}ms | "
+                                f"{throughput_kbps:>7.2f}KB/s | {per:>5.2f}%"
+                            )
 
                 logger.info(f"\n{'='*80}")
                 logger.info(f"Connection closed.")

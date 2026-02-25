@@ -9,7 +9,7 @@ if(IDF_TARGET STREQUAL "esp32h2")
 endif()
 
 if(IDF_TARGET STREQUAL "esp32")
-    list(APPEND common_requires bt)
+    list(APPEND common_requires bt esp_wifi)
 endif()
 
 idf_component_register(SRCS "main.c" "coex_packet.c"

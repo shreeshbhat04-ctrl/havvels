@@ -4,50 +4,67 @@ description: Build and flash the Haavvvels coexistence project for ESP32-H2 and 
 
 ## Build and Flash
 
-### ESP32-H2 (Zigbee/802.15.4 Interference)
-
 // turbo-all
 
-1. Clean (if needed):
-```
-idf.py fullclean
-```
+### ESP32-H2 (Zigbee + USB Serial)
 
-2. Set target:
+1. Set target:
 ```
 idf.py -B build_h2 set-target esp32h2
 ```
 
-3. Build:
+2. Build:
 ```
 idf.py -B build_h2 build
 ```
 
-4. Flash and monitor (COM10):
+3. Flash and monitor (COM10):
 ```
 idf.py -B build_h2 -p COM10 flash monitor
 ```
 
 ### ESP32-S3 (Wi-Fi Client)
 
-5. Set target with sdkconfig:
+4. Set target:
 ```
 idf.py -B build_s3 -D SDKCONFIG=sdkconfig.s3 set-target esp32s3
 ```
 
-6. Build:
+5. Build:
 ```
 idf.py -B build_s3 -D SDKCONFIG=sdkconfig.s3 build
 ```
 
-7. Flash and monitor (COM9):
+6. Flash and monitor (COM9):
 ```
 idf.py -B build_s3 -D SDKCONFIG=sdkconfig.s3 -p COM9 flash monitor
 ```
 
+### ESP32 Classic (Wi-Fi + BLE)
+
+7. Set target:
+```
+idf.py -B build_esp32 set-target esp32
+```
+
+8. Build:
+```
+idf.py -B build_esp32 build
+```
+
+9. Flash and monitor (COM3):
+```
+idf.py -B build_esp32 -p COM3 flash monitor
+```
+
 ### TCP Server (Laptop)
 
-8. Run the Python server:
+10. Install dependencies:
+```
+pip install pyserial
+```
+
+11. Run the Python server:
 ```
 python tcp_server.py
 ```

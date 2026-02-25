@@ -1,0 +1,3 @@
+# Haavvvels — ESP32-S3 specific defaults
+# Enable software coexistence (Wi-Fi + BLE time-sharing)
+CONFIG_ESP_COEX_SW_COEXIST_ENABLE=y

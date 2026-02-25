@@ -1,0 +1,3 @@
+# Haavvvels — Shared sdkconfig defaults (all targets)
+# Enable software coexistence for Wi-Fi+BLE / Zigbee+BLE time-sharing
+CONFIG_ESP_COEX_SW_COEXIST_ENABLE=y

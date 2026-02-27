@@ -1,0 +1,18 @@
+# NodeD_h2 — ESP32-H2: Zigbee Coordinator
+
+# Zigbee Coordinator
+CONFIG_ZB_ENABLED=y
+CONFIG_ZB_ZCZR_ROLE=y
+
+# Custom partition table for Zigbee storage
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partition.csv"
+# Enable Bluetooth (NimBLE)
+CONFIG_BT_ENABLED=y
+CONFIG_BT_NIMBLE_ENABLED=y
+
+# Enable 802.15.4 (Zigbee)
+CONFIG_IEEE802154_ENABLED=y
+
+# Enable coexistence — time-slices the single radio between Zigbee and BLE
+CONFIG_ESP_COEX_SW_COEXIST_ENABLE=y

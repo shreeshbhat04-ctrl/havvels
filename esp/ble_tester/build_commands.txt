@@ -1,0 +1,19 @@
+# Build Commands for ESP32-H2 BLE Tester
+
+## Setup (one-time)
+cd c:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ble_tester
+idf.py set-target esp32h2
+
+============================================================
+ DEVICE 1 — MASTER / CENTRAL (COM10)
+============================================================
+1. Edit main/main.c -> #define IS_CENTRAL 1
+2. Build:   idf.py -B build_h2_1 build
+3. Flash:   idf.py -B build_h2_1 -p COM10 flash monitor
+
+============================================================
+ DEVICE 2 — NODE / PERIPHERAL (COM14)
+============================================================
+1. Edit main/main.c -> #define IS_CENTRAL 0
+2. Build:   idf.py -B build_h2_2 build
+3. Flash:   idf.py -B build_h2_2 -p COM14 flash monitor

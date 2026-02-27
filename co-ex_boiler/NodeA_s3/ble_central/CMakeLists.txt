@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS
+        "ble_central.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        bt
+        coex_packet
+    PRIV_REQUIRES
+        esp_timer
+)

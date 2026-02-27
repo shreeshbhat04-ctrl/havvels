@@ -1,0 +1,390 @@
+mBLE: GATT procedure initiated: notify;
+I (204739) NimBLE: att_handle=3
+
+I (204839) NimBLE: GATT procedure initiated: notify;
+I (204839) NimBLE: att_handle=3
+
+I (204939) NimBLE: GATT procedure initiated: notify;
+I (204939) NimBLE: att_handle=3
+
+I (205039) NimBLE: GATT procedure initiated: notify;
+I (205039) NimBLE: att_handle=3
+
+I (205139) NimBLE: GATT procedure initiated: notify;
+I (205139) NimBLE: att_handle=3
+
+I (205239) NimBLE: GATT procedure initiated: notify;
+I (205239) NimBLE: att_handle=3
+
+I (205339) NimBLE: GATT procedure initiated: notify;
+I (205339) NimBLE: att_handle=3
+
+I (205439) NimBLE: GATT procedure initiated: notify;
+I (205439) NimBLE: att_handle=3
+
+I (205449) BLE_TEST: ============= PURE BLE COEX DASHBOARD (NODE) ===============
+I (205449) BLE_TEST: Packets Received: 2044 | ACKs Sent: 2044
+I (205449) BLE_TEST: ============================================================
+I (205539) NimBLE: GATT procedure initiated: notify;
+I (205539) NimBLE: att_handle=3
+
+I (205639) NimBLE: GATT procedure initiated: notify;
+I (205639) NimBLE: att_handle=3
+
+I (205739) NimBLE: GATT procedure initiated: notify;
+I (205739) NimBLE: att_handle=3
+
+I (205839) NimBLE: GATT procedure initiated: notify;
+I (205839) NimBLE: att_handle=3
+
+I (205939) NimBLE: GATT procedure initiated: notify;
+I (205939) NimBLE: att_handle=3
+
+I (206039) NimBLE: GATT procedure initiated: notify;
+I (206039) NimBLE: att_handle=3
+
+I (206139) NimBLE: GATT procedure initiated: notify;
+I (206139) NimBLE: att_handle=3
+
+I (206239) NimBLE: GATT procedure initiated: notify;
+I (206239) NimBLE: att_handle=3
+
+I (206339) NimBLE: GATT procedure initiated: notify;
+I (206339) NimBLE: att_handle=3
+
+I (206439) NimBLE: GATT procedure initiated: notify;
+I (206439) NimBLE: att_handle=3
+
+I (206539) NimBLE: GATT procedure initiated: notify;
+I (206539) NimBLE: att_handle=3
+
+I (206639) NimBLE: GATT procedure initiated: notify;
+I (206639) NimBLE: att_handle=3
+
+I (206739) NimBLE: GATT procedure initiated: notify;
+I (206739) NimBLE: att_handle=3
+
+I (206839) NimBLE: GATT procedure initiated: notify;
+I (206839) NimBLE: att_handle=3
+
+I (206939) NimBLE: GATT procedure initiated: notify;
+I (206939) NimBLE: att_handle=3
+
+I (207039) NimBLE: GATT procedure initiated: notify;
+I (207039) NimBLE: att_handle=3
+
+I (207139) NimBLE: GATT procedure initiated: notify;
+I (207139) NimBLE: att_handle=3
+
+I (207239) NimBLE: GATT procedure initiated: notify;
+I (207239) NimBLE: att_handle=3
+
+I (207339) NimBLE: GATT procedure initiated: notify;
+I (207339) NimBLE: att_handle=3
+
+I (207439) NimBLE: GATT procedure initiated: notify;
+I (207439) NimBLE: att_handle=3
+
+I (207539) NimBLE: GATT procedure initiated: notify;
+I (207539) NimBLE: att_handle=3
+
+I (207639) NimBLE: GATT procedure initiated: notify;
+I (207639) NimBLE: att_handle=3
+
+I (207739) NimBLE: GATT procedure initiated: notify;
+I (207739) NimBLE: att_handle=3
+
+I (207839) NimBLE: GATT procedure initiated: notify;
+I (207839) NimBLE: att_handle=3
+
+I (207939) NimBLE: GATT procedure initiated: notify;
+I (207939) NimBLE: att_handle=3
+
+I (208039) NimBLE: GATT procedure initiated: notify;
+I (208039) NimBLE: att_handle=3
+
+I (208139) NimBLE: GATT procedure initiated: notify;
+I (208139) NimBLE: att_handle=3
+
+I (208239) NimBLE: GATT procedure initiated: notify;
+I (208239) NimBLE: att_handle=3
+
+I (208339) NimBLE: GATT procedure initiated: notify;
+I (208339) NimBLE: att_handle=3
+
+I (208439) NimBLE: GATT procedure initiated: notify;
+I (208439) NimBLE: att_handle=3
+
+I (208539) NimBLE: GATT procedure initiated: notify;
+I (208539) NimBLE: att_handle=3
+
+I (208639) NimBLE: GATT procedure initiated: notify;
+I (208639) NimBLE: att_handle=3
+
+I (208739) NimBLE: GATT procedure initiated: notify;
+I (208739) NimBLE: att_handle=3
+
+I (208839) NimBLE: GATT procedure initiated: notify;
+I (208839) NimBLE: att_handle=3
+
+I (208939) NimBLE: GATT procedure initiated: notify;
+I (208939) NimBLE: att_handle=3
+
+I (209039) NimBLE: GATT procedure initiated: notify;
+I (209039) NimBLE: att_handle=3
+
+I (209139) NimBLE: GATT procedure initiated: notify;
+I (209139) NimBLE: att_handle=3
+
+I (209239) NimBLE: GATT procedure initiated: notify;
+I (209239) NimBLE: att_handle=3
+
+I (209339) NimBLE: GATT procedure initiated: notify;
+I (209339) NimBLE: att_handle=3
+
+I (209439) NimBLE: GATT procedure initiated: notify;
+I (209439) NimBLE: att_handle=3
+
+I (209539) NimBLE: GATT procedure initiated: notify;
+I (209539) NimBLE: att_handle=3
+
+I (209639) NimBLE: GATT procedure initiated: notify;
+I (209639) NimBLE: att_handle=3
+
+I (209739) NimBLE: GATT procedure initiated: notify;
+I (209739) NimBLE: att_handle=3
+
+I (209839) NimBLE: GATT procedure initiated: notify;
+I (209839) NimBLE: att_handle=3
+
+I (209939) NimBLE: GATT procedure initiated: notify;
+I (209939) NimBLE: att_handle=3
+
+I (210039) NimBLE: GATT procedure initiated: notify;
+I (210039) NimBLE: att_handle=3
+
+I (210139) NimBLE: GATT procedure initiated: notify;
+I (210139) NimBLE: att_handle=3
+
+I (210239) NimBLE: GATT procedure initiated: notify;
+I (210239) NimBLE: att_handle=3
+
+I (210339) NimBLE: GATT procedure initiated: notify;
+I (210339) NimBLE: att_handle=3
+
+I (210439) NimBLE: GATT procedure initiated: notify;
+I (210439) NimBLE: att_handle=3
+
+I (210449) BLE_TEST: ============= PURE BLE COEX DASHBOARD (NODE) ===============
+I (210449) BLE_TEST: Packets Received: 2094 | ACKs Sent: 2094
+I (210449) BLE_TEST: ============================================================
+I (210539) NimBLE: GATT procedure initiated: notify;
+I (210539) NimBLE: att_handle=3
+
+I (210639) NimBLE: GATT procedure initiated: notify;
+I (210639) NimBLE: att_handle=3
+
+I (210739) NimBLE: GATT procedure initiated: notify;
+I (210739) NimBLE: att_handle=3
+
+I (210839) NimBLE: GATT procedure initiated: notify;
+I (210839) NimBLE: att_handle=3
+
+I (210939) NimBLE: GATT procedure initiated: notify;
+I (210939) NimBLE: att_handle=3
+
+I (211039) NimBLE: GATT procedure initiated: notify;
+I (211039) NimBLE: att_handle=3
+
+I (211139) NimBLE: GATT procedure initiated: notify;
+I (211139) NimBLE: att_handle=3
+
+I (211239) NimBLE: GATT procedure initiated: notify;
+I (211239) NimBLE: att_handle=3
+
+I (211339) NimBLE: GATT procedure initiated: notify;
+I (211339) NimBLE: att_handle=3
+
+I (211439) NimBLE: GATT procedure initiated: notify;
+I (211439) NimBLE: att_handle=3
+
+I (211539) NimBLE: GATT procedure initiated: notify;
+I (211539) NimBLE: att_handle=3
+
+I (211639) NimBLE: GATT procedure initiated: notify;
+I (211639) NimBLE: att_handle=3
+
+I (211739) NimBLE: GATT procedure initiated: notify;
+I (211739) NimBLE: att_handle=3
+
+I (211839) NimBLE: GATT procedure initiated: notify;
+I (211839) NimBLE: att_handle=3
+
+I (211939) NimBLE: GATT procedure initiated: notify;
+I (211939) NimBLE: att_handle=3
+
+I (212039) NimBLE: GATT procedure initiated: notify;
+I (212039) NimBLE: att_handle=3
+
+I (212139) NimBLE: GATT procedure initiated: notify;
+I (212139) NimBLE: att_handle=3
+
+I (212239) NimBLE: GATT procedure initiated: notify;
+I (212239) NimBLE: att_handle=3
+
+I (212339) NimBLE: GATT procedure initiated: notify;
+I (212339) NimBLE: att_handle=3
+
+I (212439) NimBLE: GATT procedure initiated: notify;
+I (212439) NimBLE: att_handle=3
+
+I (212539) NimBLE: GATT procedure initiated: notify;
+I (212539) NimBLE: att_handle=3
+
+I (212639) NimBLE: GATT procedure initiated: notify;
+I (212639) NimBLE: att_handle=3
+
+I (212739) NimBLE: GATT procedure initiated: notify;
+I (212739) NimBLE: att_handle=3
+
+I (212839) NimBLE: GATT procedure initiated: notify;
+I (212839) NimBLE: att_handle=3
+
+I (212939) NimBLE: GATT procedure initiated: notify;
+I (212939) NimBLE: att_handle=3
+
+I (213039) NimBLE: GATT procedure initiated: notify;
+I (213039) NimBLE: att_handle=3
+
+I (213139) NimBLE: GATT procedure initiated: notify;
+I (213139) NimBLE: att_handle=3
+
+I (213239) NimBLE: GATT procedure initiated: notify;
+I (213239) NimBLE: att_handle=3
+
+I (213339) NimBLE: GATT procedure initiated: notify;
+I (213339) NimBLE: att_handle=3
+
+I (213439) NimBLE: GATT procedure initiated: notify;
+I (213439) NimBLE: att_handle=3
+
+I (213539) NimBLE: GATT procedure initiated: notify;
+I (213539) NimBLE: att_handle=3
+
+I (213639) NimBLE: GATT procedure initiated: notify;
+I (213639) NimBLE: att_handle=3
+
+I (213739) NimBLE: GATT procedure initiated: notify;
+I (213739) NimBLE: att_handle=3
+
+I (213839) NimBLE: GATT procedure initiated: notify;
+I (213839) NimBLE: att_handle=3
+
+I (213939) NimBLE: GATT procedure initiated: notify;
+I (213939) NimBLE: att_handle=3
+
+I (214039) NimBLE: GATT procedure initiated: notify;
+I (214039) NimBLE: att_handle=3
+
+I (214139) NimBLE: GATT procedure initiated: notify;
+I (214139) NimBLE: att_handle=3
+
+I (214239) NimBLE: GATT procedure initiated: notify;
+I (214239) NimBLE: att_handle=3
+
+I (214339) NimBLE: GATT procedure initiated: notify;
+I (214339) NimBLE: att_handle=3
+
+I (214439) NimBLE: GATT procedure initiated: notify;
+I (214439) NimBLE: att_handle=3
+
+I (214539) NimBLE: GATT procedure initiated: notify;
+I (214539) NimBLE: att_handle=3
+
+I (214689) NimBLE: GATT procedure initiated: notify;
+I (214689) NimBLE: att_handle=3
+
+I (214789) NimBLE: GATT procedure initiated: notify;
+I (214789) NimBLE: att_handle=3
+
+I (214889) NimBLE: GATT procedure initiated: notify;
+I (214889) NimBLE: att_handle=3
+
+I (214989) NimBLE: GATT procedure initiated: notify;
+I (214989) NimBLE: att_handle=3
+
+I (215089) NimBLE: GATT procedure initiated: notify;
+I (215089) NimBLE: att_handle=3
+
+I (215189) NimBLE: GATT procedure initiated: notify;
+I (215189) NimBLE: att_handle=3
+
+I (215289) NimBLE: GATT procedure initiated: notify;
+I (215289) NimBLE: att_handle=3
+
+I (215389) NimBLE: GATT procedure initiated: notify;
+I (215389) NimBLE: att_handle=3
+
+I (215449) BLE_TEST: ============= PURE BLE COEX DASHBOARD (NODE) ===============
+I (215449) BLE_TEST: Packets Received: 2143 | ACKs Sent: 2143
+I (215449) BLE_TEST: ============================================================
+I (215489) NimBLE: GATT procedure initiated: notify;
+I (215489) NimBLE: att_handle=3
+
+I (215589) NimBLE: GATT procedure initiated: notify;
+I (215589) NimBLE: att_handle=3
+
+I (215689) NimBLE: GATT procedure initiated: notify;
+I (215689) NimBLE: att_handle=3
+
+I (215789) NimBLE: GATT procedure initiated: notify;
+I (215789) NimBLE: att_handle=3
+
+I (215889) NimBLE: GATT procedure initiated: notify;
+I (215889) NimBLE: att_handle=3
+
+I (215989) NimBLE: GATT procedure initiated: notify;
+I (215989) NimBLE: att_handle=3
+
+I (216089) NimBLE: GATT procedure initiated: notify;
+I (216089) NimBLE: att_handle=3
+
+I (216189) NimBLE: GATT procedure initiated: notify;
+I (216189) NimBLE: att_handle=3
+
+I (216289) NimBLE: GATT procedure initiated: notify;
+I (216289) NimBLE: att_handle=3
+
+I (216389) NimBLE: GATT procedure initiated: notify;
+I (216389) NimBLE: att_handle=3
+
+I (216489) NimBLE: GATT procedure initiated: notify;
+I (216489) NimBLE: att_handle=3
+
+I (216589) NimBLE: GATT procedure initiated: notify;
+I (216589) NimBLE: att_handle=3
+
+I (216689) NimBLE: GATT procedure initiated: notify;
+I (216689) NimBLE: att_handle=3
+
+I (216789) NimBLE: GATT procedure initiated: notify;
+I (216789) NimBLE: att_handle=3
+
+I (216889) NimBLE: GATT procedure initiated: notify;
+I (216889) NimBLE: att_handle=3
+
+I (216989) NimBLE: GATT procedure initiated: notify;
+I (216989) NimBLE: att_handle=3
+
+I (217089) NimBLE: GATT procedure initiated: notify;
+I (217089) NimBLE: att_handle=3
+
+I (217189) NimBLE: GATT procedure initiated: notify;
+I (217189) NimBLE: att_handle=3
+
+I (217289) NimBLE: GATT procedure initiated: notify;
+I (217289) NimBLE: att_handle=3
+
+
+Done
+PS C:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ble_tester>

@@ -1,0 +1,50 @@
+# Build Commands for ESP32-H2 Ultimate Coexistence Setup
+# All commands run from: c:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ultimate_setup
+
+## Setup (one-time)
+cd c:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ultimate_setup
+idf.py set-target esp32h2
+
+============================================================
+ NODE D — ZIGBEE COORDINATOR + BLE PERIPHERAL (COM10)
+============================================================
+1. Edit main/main.c -> #define IS_NODE_D 1
+2. Build:   idf.py -B build_node_d build
+3. Flash:   idf.py -B build_node_d -p COM10 flash
+4. Monitor + Log (timestamped):
+   idf.py -B build_node_d -p COM10 monitor 2>&1 | Tee-Object -FilePath "logs\node_d_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+5. Quick monitor (no log):
+   idf.py -B build_node_d -p COM10 monitor
+
+============================================================
+ NODE C — ZIGBEE END DEVICE + BLE PERIPHERAL (COM14)
+============================================================
+1. Edit main/main.c -> #define IS_NODE_D 0
+2. Build:   idf.py -B build_node_c build
+3. Flash:   idf.py -B build_node_c -p COM14 flash
+4. Monitor + Log (timestamped):
+   idf.py -B build_node_c -p COM14 monitor 2>&1 | Tee-Object -FilePath "logs\node_c_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+5. Quick monitor (no log):
+   idf.py -B build_node_c -p COM14 monitor
+
+============================================================
+ ONE-LINER: BUILD + FLASH + LOG (copy-paste ready)
+============================================================
+# Create logs folder first (one-time):
+mkdir -Force logs
+
+# Node D (Terminal 1):
+idf.py -B build_node_d build; idf.py -B build_node_d -p COM10 flash; idf.py -B build_node_d -p COM10 monitor 2>&1 | Tee-Object -FilePath "logs\node_d_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+
+# Node C (Terminal 2):
+idf.py -B build_node_c build; idf.py -B build_node_c -p COM14 flash; idf.py -B build_node_c -p COM14 monitor 2>&1 | Tee-Object -FilePath "logs\node_c_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+
+============================================================
+ RADIO TOGGLES (in main/main.c)
+============================================================
+#define ENABLE_BLE    1   // 1=ON, 0=OFF
+#define ENABLE_ZIGBEE 1   // 1=ON, 0=OFF
+
+Scenario 1 (Baseline):      ENABLE_BLE=0, ENABLE_ZIGBEE=1
+Scenario 2 (BLE Interference): ENABLE_BLE=1, ENABLE_ZIGBEE=1
+Scenario 3 (Full Coex):     ENABLE_BLE=1, ENABLE_ZIGBEE=1, plus Node A/B Wi-Fi running

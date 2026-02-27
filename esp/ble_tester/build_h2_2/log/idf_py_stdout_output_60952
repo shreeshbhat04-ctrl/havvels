@@ -1,0 +1,68 @@
+Command: ninja flash
+[1/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ble_tester\build_h2_2\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/esp/ble_tester/build_h2_2/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/esp/ble_tester/build_h2_2/ble_packet_tester.bin"
+ble_packet_tester.bin binary size 0xa2520 bytes. Smallest app partition is 0x100000 bytes. 0x5dae0 bytes (37%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.3\Haavvvels\esp\ble_tester\build_h2_2\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/esp/ble_tester/build_h2_2/bootloader/bootloader.bin"
+Bootloader binary size 0x56a0 bytes. 0x2960 bytes (32%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.5.3\components\esptool_py && C:\Espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.5.3 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.5.3/components/esptool_py/esptool/esptool.py;--chip;esp32h2 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Espressif/frameworks/esp-idf-v5.5.3/Haavvvels/esp/ble_tester/build_h2_2 -P C:/Espressif/frameworks/esp-idf-v5.5.3/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32h2 -p COM14 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 48m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 ble_packet_tester.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.12.dev1
+Serial port COM14
+Connecting...
+Chip is ESP32-H2 (revision v0.1)
+Features: BLE, IEEE802.15.4
+Crystal is 32MHz
+USB mode: USB-Serial/JTAG
+MAC: 74:4d:bd:ff:fe:60:2d:d8
+BASE MAC: 74:4d:bd:60:2d:d8
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000b2fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 22176 bytes to 13850...
+Writing at 0x00000000... (100 %)
+Wrote 22176 bytes (13850 compressed) at 0x00000000 in 0.4 seconds (effective 499.0 kbit/s)...
+Hash of data verified.
+Compressed 664864 bytes to 385496...
+Writing at 0x00010000... (4 %)
+Writing at 0x0001bc10... (8 %)
+Writing at 0x00023e26... (12 %)
+Writing at 0x0002a6e1... (16 %)
+Writing at 0x000317b2... (20 %)
+Writing at 0x000397de... (25 %)
+Writing at 0x00040902... (29 %)
+Writing at 0x000474a0... (33 %)
+Writing at 0x0004e247... (37 %)
+Writing at 0x000540d0... (41 %)
+Writing at 0x0005a243... (45 %)
+Writing at 0x00060675... (50 %)
+Writing at 0x0006683e... (54 %)
+Writing at 0x0006cd48... (58 %)
+Writing at 0x00072bce... (62 %)
+Writing at 0x00078cd9... (66 %)
+Writing at 0x0007f37e... (70 %)
+Writing at 0x000860ec... (75 %)
+Writing at 0x0008cb87... (79 %)
+Writing at 0x00093622... (83 %)
+Writing at 0x000995b3... (87 %)
+Writing at 0x000a1029... (91 %)
+Writing at 0x000a70ea... (95 %)
+Writing at 0x000adff2... (100 %)
+Wrote 664864 bytes (385496 compressed) at 0x00010000 in 3.9 seconds (effective 1379.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 519.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

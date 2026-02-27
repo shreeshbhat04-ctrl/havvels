@@ -1,0 +1,489 @@
+ (236979) NimBLE: att_handle=3 len=86
+
+I (237079) NimBLE: GATT procedure initiated: write no rsp;
+I (237079) NimBLE: att_handle=3 len=86
+
+I (237179) NimBLE: GATT procedure initiated: write no rsp;
+I (237179) NimBLE: att_handle=3 len=86
+
+I (237279) NimBLE: GATT procedure initiated: write no rsp;
+I (237279) NimBLE: att_handle=3 len=86
+
+I (237379) NimBLE: GATT procedure initiated: write no rsp;
+I (237379) NimBLE: att_handle=3 len=86
+
+I (237479) NimBLE: GATT procedure initiated: write no rsp;
+I (237479) NimBLE: att_handle=3 len=86
+
+I (237579) NimBLE: GATT procedure initiated: write no rsp;
+I (237579) NimBLE: att_handle=3 len=86
+
+I (237679) NimBLE: GATT procedure initiated: write no rsp;
+I (237679) NimBLE: att_handle=3 len=86
+
+I (237779) NimBLE: GATT procedure initiated: write no rsp;
+I (237779) NimBLE: att_handle=3 len=86
+
+I (237879) NimBLE: GATT procedure initiated: write no rsp;
+I (237879) NimBLE: att_handle=3 len=86
+
+I (237979) NimBLE: GATT procedure initiated: write no rsp;
+I (237979) NimBLE: att_handle=3 len=86
+
+I (238079) NimBLE: GATT procedure initiated: write no rsp;
+I (238079) NimBLE: att_handle=3 len=86
+
+I (238179) NimBLE: GATT procedure initiated: write no rsp;
+I (238179) NimBLE: att_handle=3 len=86
+
+I (238279) NimBLE: GATT procedure initiated: write no rsp;
+I (238279) NimBLE: att_handle=3 len=86
+
+I (238379) NimBLE: GATT procedure initiated: write no rsp;
+I (238379) NimBLE: att_handle=3 len=86
+
+I (238479) NimBLE: GATT procedure initiated: write no rsp;
+I (238479) NimBLE: att_handle=3 len=86
+
+I (238579) NimBLE: GATT procedure initiated: write no rsp;
+I (238579) NimBLE: att_handle=3 len=86
+
+I (238679) NimBLE: GATT procedure initiated: write no rsp;
+I (238679) NimBLE: att_handle=3 len=86
+
+I (238779) NimBLE: GATT procedure initiated: write no rsp;
+I (238779) NimBLE: att_handle=3 len=86
+
+I (238879) NimBLE: GATT procedure initiated: write no rsp;
+I (238879) NimBLE: att_handle=3 len=86
+
+I (238979) NimBLE: GATT procedure initiated: write no rsp;
+I (238979) NimBLE: att_handle=3 len=86
+
+I (239079) NimBLE: GATT procedure initiated: write no rsp;
+I (239079) NimBLE: att_handle=3 len=86
+
+I (239179) NimBLE: GATT procedure initiated: write no rsp;
+I (239179) NimBLE: att_handle=3 len=86
+
+I (239279) NimBLE: GATT procedure initiated: write no rsp;
+I (239279) NimBLE: att_handle=3 len=86
+
+I (239379) NimBLE: GATT procedure initiated: write no rsp;
+I (239379) NimBLE: att_handle=3 len=86
+
+I (239479) NimBLE: GATT procedure initiated: write no rsp;
+I (239479) NimBLE: att_handle=3 len=86
+
+I (239579) NimBLE: GATT procedure initiated: write no rsp;
+I (239579) NimBLE: att_handle=3 len=86
+
+I (239679) NimBLE: GATT procedure initiated: write no rsp;
+I (239679) NimBLE: att_handle=3 len=86
+
+I (239779) NimBLE: GATT procedure initiated: write no rsp;
+I (239779) NimBLE: att_handle=3 len=86
+
+I (239879) NimBLE: GATT procedure initiated: write no rsp;
+I (239879) NimBLE: att_handle=3 len=86
+
+I (239979) NimBLE: GATT procedure initiated: write no rsp;
+I (239979) NimBLE: att_handle=3 len=86
+
+I (239979) BLE_TEST: Sent 1150 packets...
+I (240079) NimBLE: GATT procedure initiated: write no rsp;
+I (240079) NimBLE: att_handle=3 len=86
+
+I (240179) NimBLE: GATT procedure initiated: write no rsp;
+I (240179) NimBLE: att_handle=3 len=86
+
+I (240279) NimBLE: GATT procedure initiated: write no rsp;
+I (240279) NimBLE: att_handle=3 len=86
+
+I (240379) NimBLE: GATT procedure initiated: write no rsp;
+I (240379) NimBLE: att_handle=3 len=86
+
+I (240479) NimBLE: GATT procedure initiated: write no rsp;
+I (240479) NimBLE: att_handle=3 len=86
+
+I (240489) BLE_TEST: ============= PURE BLE COEX DASHBOARD (MASTER) =============
+I (240489) BLE_TEST: TX: 1155 | RX ACKs: 1154 | Loss: 0.1%
+I (240489) BLE_TEST: ============================================================
+I (240579) NimBLE: GATT procedure initiated: write no rsp;
+I (240579) NimBLE: att_handle=3 len=86
+
+I (240679) NimBLE: GATT procedure initiated: write no rsp;
+I (240679) NimBLE: att_handle=3 len=86
+
+I (240779) NimBLE: GATT procedure initiated: write no rsp;
+I (240779) NimBLE: att_handle=3 len=86
+
+I (240879) NimBLE: GATT procedure initiated: write no rsp;
+I (240879) NimBLE: att_handle=3 len=86
+
+I (240979) NimBLE: GATT procedure initiated: write no rsp;
+I (240979) NimBLE: att_handle=3 len=86
+
+I (241079) NimBLE: GATT procedure initiated: write no rsp;
+I (241079) NimBLE: att_handle=3 len=86
+
+I (241179) NimBLE: GATT procedure initiated: write no rsp;
+I (241179) NimBLE: att_handle=3 len=86
+
+I (241279) NimBLE: GATT procedure initiated: write no rsp;
+I (241279) NimBLE: att_handle=3 len=86
+
+I (241379) NimBLE: GATT procedure initiated: write no rsp;
+I (241379) NimBLE: att_handle=3 len=86
+
+I (241479) NimBLE: GATT procedure initiated: write no rsp;
+I (241479) NimBLE: att_handle=3 len=86
+
+I (241579) NimBLE: GATT procedure initiated: write no rsp;
+I (241579) NimBLE: att_handle=3 len=86
+
+I (241679) NimBLE: GATT procedure initiated: write no rsp;
+I (241679) NimBLE: att_handle=3 len=86
+
+I (241779) NimBLE: GATT procedure initiated: write no rsp;
+I (241779) NimBLE: att_handle=3 len=86
+
+I (241879) NimBLE: GATT procedure initiated: write no rsp;
+I (241879) NimBLE: att_handle=3 len=86
+
+I (241979) NimBLE: GATT procedure initiated: write no rsp;
+I (241979) NimBLE: att_handle=3 len=86
+
+I (242079) NimBLE: GATT procedure initiated: write no rsp;
+I (242079) NimBLE: att_handle=3 len=86
+
+I (242179) NimBLE: GATT procedure initiated: write no rsp;
+I (242179) NimBLE: att_handle=3 len=86
+
+I (242279) NimBLE: GATT procedure initiated: write no rsp;
+I (242279) NimBLE: att_handle=3 len=86
+
+I (242379) NimBLE: GATT procedure initiated: write no rsp;
+I (242379) NimBLE: att_handle=3 len=86
+
+I (242479) NimBLE: GATT procedure initiated: write no rsp;
+I (242479) NimBLE: att_handle=3 len=86
+
+I (242579) NimBLE: GATT procedure initiated: write no rsp;
+I (242579) NimBLE: att_handle=3 len=86
+
+I (242679) NimBLE: GATT procedure initiated: write no rsp;
+I (242679) NimBLE: att_handle=3 len=86
+
+I (242779) NimBLE: GATT procedure initiated: write no rsp;
+I (242779) NimBLE: att_handle=3 len=86
+
+I (242879) NimBLE: GATT procedure initiated: write no rsp;
+I (242879) NimBLE: att_handle=3 len=86
+
+I (242979) NimBLE: GATT procedure initiated: write no rsp;
+I (242979) NimBLE: att_handle=3 len=86
+
+I (243079) NimBLE: GATT procedure initiated: write no rsp;
+I (243079) NimBLE: att_handle=3 len=86
+
+I (243179) NimBLE: GATT procedure initiated: write no rsp;
+I (243179) NimBLE: att_handle=3 len=86
+
+I (243279) NimBLE: GATT procedure initiated: write no rsp;
+I (243279) NimBLE: att_handle=3 len=86
+
+I (243379) NimBLE: GATT procedure initiated: write no rsp;
+I (243379) NimBLE: att_handle=3 len=86
+
+I (243479) NimBLE: GATT procedure initiated: write no rsp;
+I (243479) NimBLE: att_handle=3 len=86
+
+I (243579) NimBLE: GATT procedure initiated: write no rsp;
+I (243579) NimBLE: att_handle=3 len=86
+
+I (243679) NimBLE: GATT procedure initiated: write no rsp;
+I (243679) NimBLE: att_handle=3 len=86
+
+I (243779) NimBLE: GATT procedure initiated: write no rsp;
+I (243779) NimBLE: att_handle=3 len=86
+
+I (243879) NimBLE: GATT procedure initiated: write no rsp;
+I (243879) NimBLE: att_handle=3 len=86
+
+I (243979) NimBLE: GATT procedure initiated: write no rsp;
+I (243979) NimBLE: att_handle=3 len=86
+
+I (244079) NimBLE: GATT procedure initiated: write no rsp;
+I (244079) NimBLE: att_handle=3 len=86
+
+I (244179) NimBLE: GATT procedure initiated: write no rsp;
+I (244179) NimBLE: att_handle=3 len=86
+
+I (244279) NimBLE: GATT procedure initiated: write no rsp;
+I (244279) NimBLE: att_handle=3 len=86
+
+I (244379) NimBLE: GATT procedure initiated: write no rsp;
+I (244379) NimBLE: att_handle=3 len=86
+
+I (244479) NimBLE: GATT procedure initiated: write no rsp;
+I (244479) NimBLE: att_handle=3 len=86
+
+I (244579) NimBLE: GATT procedure initiated: write no rsp;
+I (244579) NimBLE: att_handle=3 len=86
+
+I (244679) NimBLE: GATT procedure initiated: write no rsp;
+I (244679) NimBLE: att_handle=3 len=86
+
+I (244779) NimBLE: GATT procedure initiated: write no rsp;
+I (244779) NimBLE: att_handle=3 len=86
+
+I (244879) NimBLE: GATT procedure initiated: write no rsp;
+I (244879) NimBLE: att_handle=3 len=86
+
+I (244979) NimBLE: GATT procedure initiated: write no rsp;
+I (244979) NimBLE: att_handle=3 len=86
+
+I (244979) BLE_TEST: Sent 1200 packets...
+I (245079) NimBLE: GATT procedure initiated: write no rsp;
+I (245079) NimBLE: att_handle=3 len=86
+
+I (245179) NimBLE: GATT procedure initiated: write no rsp;
+I (245179) NimBLE: att_handle=3 len=86
+
+I (245279) NimBLE: GATT procedure initiated: write no rsp;
+I (245279) NimBLE: att_handle=3 len=86
+
+I (245379) NimBLE: GATT procedure initiated: write no rsp;
+I (245379) NimBLE: att_handle=3 len=86
+
+I (245479) NimBLE: GATT procedure initiated: write no rsp;
+I (245479) NimBLE: att_handle=3 len=86
+
+I (245489) BLE_TEST: ============= PURE BLE COEX DASHBOARD (MASTER) =============
+I (245489) BLE_TEST: TX: 1205 | RX ACKs: 1204 | Loss: 0.1%
+I (245489) BLE_TEST: ============================================================
+I (245579) NimBLE: GATT procedure initiated: write no rsp;
+I (245579) NimBLE: att_handle=3 len=86
+
+I (245679) NimBLE: GATT procedure initiated: write no rsp;
+I (245679) NimBLE: att_handle=3 len=86
+
+I (245779) NimBLE: GATT procedure initiated: write no rsp;
+I (331679) NimBLE: att_handle=3 len=86
+
+I (331779) NimBLE: GATT procedure initiated: write no rsp;
+I (331779) NimBLE: att_handle=3 len=86
+
+I (331879) NimBLE: GATT procedure initiated: write no rsp;
+I (331879) NimBLE: att_handle=3 len=86
+
+I (331979) NimBLE: GATT procedure initiated: write no rsp;
+I (331979) NimBLE: att_handle=3 len=86
+
+I (332079) NimBLE: GATT procedure initiated: write no rsp;
+I (332079) NimBLE: att_handle=3 len=86
+
+I (332179) NimBLE: GATT procedure initiated: write no rsp;
+I (332179) NimBLE: att_handle=3 len=86
+
+I (332279) NimBLE: GATT procedure initiated: write no rsp;
+I (332279) NimBLE: att_handle=3 len=86
+
+I (332379) NimBLE: GATT procedure initiated: write no rsp;
+I (332379) NimBLE: att_handle=3 len=86
+
+I (332479) NimBLE: GATT procedure initiated: write no rsp;
+I (332479) NimBLE: att_handle=3 len=86
+
+I (332579) NimBLE: GATT procedure initiated: write no rsp;
+I (332579) NimBLE: att_handle=3 len=86
+
+I (332679) NimBLE: GATT procedure initiated: write no rsp;
+I (332679) NimBLE: att_handle=3 len=86
+
+I (332779) NimBLE: GATT procedure initiated: write no rsp;
+I (332779) NimBLE: att_handle=3 len=86
+
+I (332879) NimBLE: GATT procedure initiated: write no rsp;
+I (332879) NimBLE: att_handle=3 len=86
+
+I (332979) NimBLE: GATT procedure initiated: write no rsp;
+I (332979) NimBLE: att_handle=3 len=86
+
+I (333079) NimBLE: GATT procedure initiated: write no rsp;
+I (333079) NimBLE: att_handle=3 len=86
+
+I (333179) NimBLE: GATT procedure initiated: write no rsp;
+I (333179) NimBLE: att_handle=3 len=86
+
+I (333279) NimBLE: GATT procedure initiated: write no rsp;
+I (333279) NimBLE: att_handle=3 len=86
+
+I (333379) NimBLE: GATT procedure initiated: write no rsp;
+I (333379) NimBLE: att_handle=3 len=86
+
+I (333479) NimBLE: GATT procedure initiated: write no rsp;
+I (333479) NimBLE: att_handle=3 len=86
+
+I (333579) NimBLE: GATT procedure initiated: write no rsp;
+I (333579) NimBLE: att_handle=3 len=86
+
+I (333679) NimBLE: GATT procedure initiated: write no rsp;
+I (333679) NimBLE: att_handle=3 len=86
+
+I (333779) NimBLE: GATT procedure initiated: write no rsp;
+I (333779) NimBLE: att_handle=3 len=86
+
+I (333879) NimBLE: GATT procedure initiated: write no rsp;
+I (333879) NimBLE: att_handle=3 len=86
+
+I (333979) NimBLE: GATT procedure initiated: write no rsp;
+I (333979) NimBLE: att_handle=3 len=86
+
+I (334079) NimBLE: GATT procedure initiated: write no rsp;
+I (334079) NimBLE: att_handle=3 len=86
+
+I (334179) NimBLE: GATT procedure initiated: write no rsp;
+I (334179) NimBLE: att_handle=3 len=86
+
+I (334279) NimBLE: GATT procedure initiated: write no rsp;
+I (334279) NimBLE: att_handle=3 len=86
+
+I (334379) NimBLE: GATT procedure initiated: write no rsp;
+I (334379) NimBLE: att_handle=3 len=86
+
+I (334479) NimBLE: GATT procedure initiated: write no rsp;
+I (334479) NimBLE: att_handle=3 len=86
+
+I (334579) NimBLE: GATT procedure initiated: write no rsp;
+I (334579) NimBLE: att_handle=3 len=86
+
+I (334679) NimBLE: GATT procedure initiated: write no rsp;
+I (334679) NimBLE: att_handle=3 len=86
+
+I (334779) NimBLE: GATT procedure initiated: write no rsp;
+I (334779) NimBLE: att_handle=3 len=86
+
+I (334879) NimBLE: GATT procedure initiated: write no rsp;
+I (334879) NimBLE: att_handle=3 len=86
+
+I (334979) NimBLE: GATT procedure initiated: write no rsp;
+I (334979) NimBLE: att_handle=3 len=86
+
+I (334979) BLE_TEST: Sent 2100 packets...
+I (335079) NimBLE: GATT procedure initiated: write no rsp;
+I (335079) NimBLE: att_handle=3 len=86
+
+I (335179) NimBLE: GATT procedure initiated: write no rsp;
+I (335179) NimBLE: att_handle=3 len=86
+
+I (335279) NimBLE: GATT procedure initiated: write no rsp;
+I (335279) NimBLE: att_handle=3 len=86
+
+I (335379) NimBLE: GATT procedure initiated: write no rsp;
+I (335379) NimBLE: att_handle=3 len=86
+
+I (335479) NimBLE: GATT procedure initiated: write no rsp;
+I (335479) NimBLE: att_handle=3 len=86
+
+I (335489) BLE_TEST: ============= PURE BLE COEX DASHBOARD (MASTER) =============
+I (335489) BLE_TEST: TX: 2105 | RX ACKs: 2104 | Loss: 0.0%
+I (335489) BLE_TEST: ============================================================
+I (335579) NimBLE: GATT procedure initiated: write no rsp;
+I (335579) NimBLE: att_handle=3 len=86
+
+I (335679) NimBLE: GATT procedure initiated: write no rsp;
+I (335679) NimBLE: att_handle=3 len=86
+
+I (335779) NimBLE: GATT procedure initiated: write no rsp;
+I (335779) NimBLE: att_handle=3 len=86
+
+I (335879) NimBLE: GATT procedure initiated: write no rsp;
+I (335879) NimBLE: att_handle=3 len=86
+
+I (335979) NimBLE: GATT procedure initiated: write no rsp;
+I (335979) NimBLE: att_handle=3 len=86
+
+I (336079) NimBLE: GATT procedure initiated: write no rsp;
+I (336079) NimBLE: att_handle=3 len=86
+
+I (336179) NimBLE: GATT procedure initiated: write no rsp;
+I (336179) NimBLE: att_handle=3 len=86
+
+I (336279) NimBLE: GATT procedure initiated: write no rsp;
+I (336279) NimBLE: att_handle=3 len=86
+
+I (336379) NimBLE: GATT procedure initiated: write no rsp;
+I (336379) NimBLE: att_handle=3 len=86
+
+I (336479) NimBLE: GATT procedure initiated: write no rsp;
+I (336479) NimBLE: att_handle=3 len=86
+
+I (336579) NimBLE: GATT procedure initiated: write no rsp;
+I (336579) NimBLE: att_handle=3 len=86
+
+I (336679) NimBLE: GATT procedure initiated: write no rsp;
+I (336679) NimBLE: att_handle=3 len=86
+
+I (336779) NimBLE: GATT procedure initiated: write no rsp;
+I (336779) NimBLE: att_handle=3 len=86
+
+I (336879) NimBLE: GATT procedure initiated: write no rsp;
+I (336879) NimBLE: att_handle=3 len=86
+
+I (336979) NimBLE: GATT procedure initiated: write no rsp;
+I (336979) NimBLE: att_handle=3 len=86
+
+I (337079) NimBLE: GATT procedure initiated: write no rsp;
+I (337079) NimBLE: att_handle=3 len=86
+
+I (337179) NimBLE: GATT procedure initiated: write no rsp;
+I (337179) NimBLE: att_handle=3 len=86
+
+I (337279) NimBLE: GATT procedure initiated: write no rsp;
+I (337279) NimBLE: att_handle=3 len=86
+
+I (337379) NimBLE: GATT procedure initiated: write no rsp;
+I (337379) NimBLE: att_handle=3 len=86
+
+I (337479) NimBLE: GATT procedure initiated: write no rsp;
+I (337479) NimBLE: att_handle=3 len=86
+
+I (337579) NimBLE: GATT procedure initiated: write no rsp;
+I (337579) NimBLE: att_handle=3 len=86
+
+I (337679) NimBLE: GATT procedure initiated: write no rsp;
+I (337679) NimBLE: att_handle=3 len=86
+
+I (337779) NimBLE: GATT procedure initiated: write no rsp;
+I (337779) NimBLE: att_handle=3 len=86
+
+I (337879) NimBLE: GATT procedure initiated: write no rsp;
+I (337879) NimBLE: att_handle=3 len=86
+
+I (337979) NimBLE: GATT procedure initiated: write no rsp;
+I (337979) NimBLE: att_handle=3 len=86
+
+I (338079) NimBLE: GATT procedure initiated: write no rsp;
+I (338079) NimBLE: att_handle=3 len=86
+
+I (338179) NimBLE: GATT procedure initiated: write no rsp;
+I (338179) NimBLE: att_handle=3 len=86
+
+I (338279) NimBLE: GATT procedure initiated: write no rsp;
+I (338279) NimBLE: att_handle=3 len=86
+
+I (338379) NimBLE: GATT procedure initiated: write no rsp;
+I (338379) NimBLE: att_handle=3 len=86
+
+
+Traceback (most recent call last):
+  File "C:\Espressif\frameworks\esp-idf-v5.5.3\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt

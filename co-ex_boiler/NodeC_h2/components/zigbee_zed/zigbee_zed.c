@@ -48,13 +48,12 @@ static SemaphoreHandle_t s_batch_done_sem = NULL;
 /* Buffer for custom attribute */
 static uint8_t g_custom_attr_val[128] = {0};
 
-static void zb_tx_task(void *pvParameters) {
+/* Helper: send one 1000-packet batch and return */
+static void send_zb_batch(uint32_t batch_num) {
   uint16_t seq = 0;
+  ESP_LOGI(TAG, "ZB Batch %lu: sending %d pkts @ 10 pkt/s",
+           (unsigned long)batch_num, TEST_PKT_COUNT);
 
-  ESP_LOGI(TAG, "Zigbee TX started: sending %d packets @ 10 pkt/s",
-           TEST_PKT_COUNT);
-
-  /* Send exactly one batch — no infinite loop */
   while (seq < TEST_PKT_COUNT) {
     vTaskDelay(pdMS_TO_TICKS(100)); /* 10 packets/sec */
 
@@ -80,19 +79,27 @@ static void zb_tx_task(void *pvParameters) {
 
     seq++;
     if (seq % 100 == 0) {
-      ESP_LOGI(TAG, "Zigbee TX: %u / %d", seq, TEST_PKT_COUNT);
+      ESP_LOGI(TAG, "ZB Batch %lu: %u / %d",
+               (unsigned long)batch_num, seq, TEST_PKT_COUNT);
     }
   }
 
-  ESP_LOGI(TAG, "Zigbee TX batch complete (%d pkts) — signalling BLE phase",
-           TEST_PKT_COUNT);
+  ESP_LOGI(TAG, "ZB Batch %lu complete (%d pkts)",
+           (unsigned long)batch_num, TEST_PKT_COUNT);
+}
 
-  /* Unblock zigbee_zed_wait_batch_done() in main */
+static void zb_tx_task(void *pvParameters) {
+
+  /* Send exactly 1000 Zigbee packets then stop */
+  send_zb_batch(1);
+
+  /* Signal main() to start BLE peripheral */
+  ESP_LOGI(TAG, "Zigbee test done — 1000 packets sent. Waking BLE phase.");
   if (s_batch_done_sem) {
     xSemaphoreGive(s_batch_done_sem);
   }
 
-  vTaskDelete(NULL); /* This task is done */
+  vTaskDelete(NULL);
 }
 
 /* ============================================================
@@ -156,9 +163,13 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct) {
   case ESP_ZB_BDB_SIGNAL_DEVICE_REBOOT:
 
     if (err_status == ESP_OK) {
-
       /* Begin network join */
       ESP_LOGI(TAG, "Steering to join network...");
+      esp_zb_bdb_start_top_level_commissioning(
+          ESP_ZB_BDB_MODE_NETWORK_STEERING);
+    } else {
+      /* Stale network info or init failure — force re-steering */
+      ESP_LOGW(TAG, "Init/reboot failed (0x%x), re-steering...", err_status);
       esp_zb_bdb_start_top_level_commissioning(
           ESP_ZB_BDB_MODE_NETWORK_STEERING);
     }
@@ -254,6 +265,11 @@ static void zigbee_task(void *pvParameters) {
 
   /* Channel selection */
   esp_zb_set_primary_network_channel_set(1 << ZIGBEE_CHANNEL);
+
+  /* Erase stale network info so we always do a fresh join.
+     This is critical when the coordinator (NodeD) was re-flashed
+     and formed a new network — old credentials are invalid. */
+  esp_zb_nvram_erase_at_start(true);
 
   /* Start Zigbee stack */
   ESP_ERROR_CHECK(esp_zb_start(false));

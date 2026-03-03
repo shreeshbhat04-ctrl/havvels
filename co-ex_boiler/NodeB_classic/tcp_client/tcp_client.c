@@ -140,10 +140,9 @@ static void tcp_client_task(void *arg) {
                (unsigned long)batch, TEST_PACKET_COUNT);
     }
 
-    /* Short pause before next batch */
     close(sock);
-    ESP_LOGI(TAG, "Disconnected, next batch in 5s...");
-    vTaskDelay(pdMS_TO_TICKS(5000));
+    ESP_LOGI(TAG, "WiFi test done — 1000 packets sent. Task stopping.");
+    vTaskDelete(NULL);
   }
 }
 

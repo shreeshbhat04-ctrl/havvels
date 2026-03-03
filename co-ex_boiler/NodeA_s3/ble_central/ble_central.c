@@ -47,8 +47,6 @@
 #define DEVICE_NAME_1 "NODE-B(classic)"
 #define DEVICE_NAME_2 "NODE-C(H2)"
 
-#define BLE_SEND_INTERVAL_MS 100
-
 /* ================= GLOBAL STATE ================= */
 
 static uint16_t conn_nodeb = BLE_HS_CONN_HANDLE_NONE;
@@ -88,19 +86,19 @@ static void print_ble_session_report(const char *node, test_session_t *s) {
   double pdr =
       s->target_count > 0 ? 100.0 * s->rx_count / s->target_count : 0.0;
 
-  ESP_LOGI(TAG, "╔══════════════════════════════════════╗");
-  ESP_LOGI(TAG, "║  BLE %s SESSION REPORT", node);
-  ESP_LOGI(TAG, "╠══════════════════════════════════════╣");
-  ESP_LOGI(TAG, "║  TX:         %lu", (unsigned long)s->tx_count);
-  ESP_LOGI(TAG, "║  RX:         %lu / %lu",
+  ESP_LOGI(TAG, "+--------------------------------------+");
+  ESP_LOGI(TAG, "|  BLE %s SESSION REPORT", node);
+  ESP_LOGI(TAG, "+--------------------------------------+");
+  ESP_LOGI(TAG, "|  TX:         %lu", (unsigned long)s->tx_count);
+  ESP_LOGI(TAG, "|  RX:         %lu / %lu",
            (unsigned long)s->rx_count, (unsigned long)s->target_count);
-  ESP_LOGI(TAG, "║  Lost:       %lu", (unsigned long)s->lost_count);
-  ESP_LOGI(TAG, "║  PDR:        %.1f%%", pdr);
-  ESP_LOGI(TAG, "║  Bytes RX:   %lu", (unsigned long)s->total_bytes);
-  ESP_LOGI(TAG, "║  Duration:   %.2f s", duration);
-  ESP_LOGI(TAG, "║  Throughput: %.1f kbps", throughput_kbps);
-  ESP_LOGI(TAG, "║  Avg Jitter: %.1f us", avg_jitter);
-  ESP_LOGI(TAG, "╚══════════════════════════════════════╝");
+  ESP_LOGI(TAG, "|  Lost:       %lu", (unsigned long)s->lost_count);
+  ESP_LOGI(TAG, "|  PDR:        %.1f%%", pdr);
+  ESP_LOGI(TAG, "|  Bytes RX:   %lu", (unsigned long)s->total_bytes);
+  ESP_LOGI(TAG, "|  Duration:   %.2f s", duration);
+  ESP_LOGI(TAG, "|  Throughput: %.1f kbps", throughput_kbps);
+  ESP_LOGI(TAG, "|  Avg Jitter: %.1f us", avg_jitter);
+  ESP_LOGI(TAG, "+--------------------------------------+");
 }
 
 /* ================= HELPER FUNCTIONS ================= */
@@ -209,9 +207,22 @@ static int gap_event_cb(struct ble_gap_event *event, void *arg) {
 
     ble_gap_disc_cancel();
 
-    ble_gap_connect(BLE_OWN_ADDR_PUBLIC, &event->disc.addr, 30000, NULL,
-                    gap_event_cb, NULL);
-    return 0;
+    /* Custom connect params: WiFi coex needs a generous supervision timeout
+       so the connection survives WiFi bursts on the S3. */
+    struct ble_gap_conn_params conn_params = {
+        .scan_itvl = 0x0060,           /* 96 * 0.625ms = 60ms */
+        .scan_window = 0x0030,         /* 48 * 0.625ms = 30ms */
+        .itvl_min = 0x0018,            /* 24 * 1.25ms = 30ms */
+        .itvl_max = 0x0030,            /* 48 * 1.25ms = 60ms */
+        .latency = 0,
+        .supervision_timeout = 0x0258, /* 600 * 10ms = 6.0s */
+        .min_ce_len = 0,
+        .max_ce_len = 0,
+    };
+
+    ble_gap_connect(BLE_OWN_ADDR_PUBLIC, &event->disc.addr, 30000,
+                    &conn_params, gap_event_cb, NULL);
+    return 0;/// important for coexxistence
 
   /* ---------- CONNECTION COMPLETE ---------- */
   case BLE_GAP_EVENT_CONNECT:
@@ -243,13 +254,15 @@ static int gap_event_cb(struct ble_gap_event *event, void *arg) {
     if (event->disconnect.conn.conn_handle == conn_nodeb) {
       conn_nodeb = BLE_HS_CONN_HANDLE_NONE;
       char_nodeb = 0;
-      ESP_LOGI(TAG, "NodeB disconnected");
+      ESP_LOGW(TAG, "NodeB disconnected (reason=0x%02x)",
+               event->disconnect.reason);
     }
 
     if (event->disconnect.conn.conn_handle == conn_nodec) {
       conn_nodec = BLE_HS_CONN_HANDLE_NONE;
       char_nodec = 0;
-      ESP_LOGI(TAG, "NodeC disconnected");
+      ESP_LOGW(TAG, "NodeC disconnected (reason=0x%02x)",
+               event->disconnect.reason);
     }
 
     ble_app_scan();
@@ -260,17 +273,16 @@ static int gap_event_cb(struct ble_gap_event *event, void *arg) {
 
     ESP_LOGI(TAG, "MTU updated: %d", event->mtu.value);
 
-    /* Request longer connection interval to reduce BLE radio usage
-       and give WiFi (on S3) and Zigbee (on H2) more airtime */
+    /* Request connection parameters that work with WiFi coex on S3 */
     {
       struct ble_gap_upd_params conn_params = {
-          .itvl_min = 0x0028,          /* 40 * 1.25ms = 50ms min */
-          .itvl_max = 0x0050,          /* 80 * 1.25ms = 100ms max */
-          .latency = 0,
-          .supervision_timeout = 0x0200 /* 512 * 10ms = 5.12s */
+          .itvl_min = 0x0018,          /* 24 * 1.25ms = 30ms min */
+          .itvl_max = 0x0030,          /* 48 * 1.25ms = 60ms max */
+          .latency = 0,                /* no skipping — need throughput */
+          .supervision_timeout = 0x0258 /* 600 * 10ms = 6.0s */
       };
       ble_gap_update_params(event->mtu.conn_handle, &conn_params);
-      ESP_LOGI(TAG, "Requested conn interval 50-100ms for handle %d",
+      ESP_LOGI(TAG, "Requested conn interval 30-60ms, timeout 6s for handle %d",
                event->mtu.conn_handle);
     }
 
@@ -395,67 +407,6 @@ static void ble_host_task(void *param) {
   nimble_port_freertos_deinit();
 }
 
-/* ================= DATA EXCHANGE TASK ================= */
-
-static void ble_data_task(void *pvParameters) {
-  uint16_t seq_b = 0, seq_c = 0;
-  uint32_t batch_b = 0, batch_c = 0;
-
-  while (1) {
-    vTaskDelay(pdMS_TO_TICKS(BLE_SEND_INTERVAL_MS));
-
-    /* Send to NodeB */
-    if (conn_nodeb != BLE_HS_CONN_HANDLE_NONE && char_nodeb != 0) {
-      uint8_t pkt[4] = {0xAA, 0x55, (uint8_t)(seq_b & 0xFF),
-                         (uint8_t)(seq_b >> 8)};
-      if (ble_gattc_write_flat(conn_nodeb, char_nodeb, pkt, sizeof(pkt), NULL,
-                                NULL) == 0) {
-        g_ble_tx++;
-        g_ble_session_b.tx_count++;
-        seq_b++;
-
-        if (seq_b % 100 == 0) {
-          ESP_LOGI(TAG, "BLE NodeB TX progress: %u/%d", seq_b,
-                   TEST_PACKET_COUNT);
-        }
-
-        if (seq_b >= TEST_PACKET_COUNT) {
-          batch_b++;
-          ESP_LOGI(TAG, "BLE NodeB batch #%lu complete",
-                   (unsigned long)batch_b);
-          seq_b = 0;
-          vTaskDelay(pdMS_TO_TICKS(5000));
-        }
-      }
-    }
-
-    /* Send to NodeC */
-    if (conn_nodec != BLE_HS_CONN_HANDLE_NONE && char_nodec != 0) {
-      uint8_t pkt[4] = {0xAA, 0x55, (uint8_t)(seq_c & 0xFF),
-                         (uint8_t)(seq_c >> 8)};
-      if (ble_gattc_write_flat(conn_nodec, char_nodec, pkt, sizeof(pkt), NULL,
-                                NULL) == 0) {
-        g_ble_tx++;
-        g_ble_session_c.tx_count++;
-        seq_c++;
-
-        if (seq_c % 100 == 0) {
-          ESP_LOGI(TAG, "BLE NodeC TX progress: %u/%d", seq_c,
-                   TEST_PACKET_COUNT);
-        }
-
-        if (seq_c >= TEST_PACKET_COUNT) {
-          batch_c++;
-          ESP_LOGI(TAG, "BLE NodeC batch #%lu complete",
-                   (unsigned long)batch_c);
-          seq_c = 0;
-          vTaskDelay(pdMS_TO_TICKS(5000));
-        }
-      }
-    }
-  }
-}
-
 /* ================= PUBLIC FUNCTIONS ================= */
 
 void ble_central_get_stats(uint32_t *rx, uint32_t *tx) {
@@ -489,7 +440,5 @@ void ble_central_init(void) {
 
   nimble_port_freertos_init(ble_host_task);
 
-  xTaskCreate(ble_data_task, "ble_tx", 4096, NULL, 5, NULL);
-
-  ESP_LOGI(TAG, "BLE Central initialized");
+  ESP_LOGI(TAG, "BLE Central initialized (RX-only)");
 }

@@ -28,20 +28,20 @@ void dll_metrics_report(const dll_metrics_t *m, dll_scenario_t scenario) {
   }
 
   ESP_LOGI(TAG, "+--------------------------------------+");
-  ESP_LOGI(TAG, "|  DLL SESSION REPORT (%s)             |",
-           dll_scenario_name(scenario));
+  ESP_LOGI(TAG, "|  DLL SESSION REPORT                  |");
+  ESP_LOGI(TAG, "|  Scenario:   %-24s|", dll_scenario_name(scenario));
   ESP_LOGI(TAG, "+--------------------------------------+");
-  ESP_LOGI(TAG, "|  BLE LL Retrans: %lu",
+  ESP_LOGI(TAG, "|  BLE LL Retrans: %16lu |",
            (unsigned long)m->ble_ll_retransmissions);
-  ESP_LOGI(TAG, "|  Wi-Fi MAC Retry: %lu",
+  ESP_LOGI(TAG, "|  Wi-Fi MAC Retry: %16lu |",
            (unsigned long)m->wifi_mac_retry_frames);
-  ESP_LOGI(TAG, "|  Wi-Fi MAC Drop:  %lu",
+  ESP_LOGI(TAG, "|  Wi-Fi MAC Drop:  %16lu |",
            (unsigned long)m->wifi_mac_drop_retry_limit);
-  ESP_LOGI(TAG, "|  Zigbee ACK TO:   %lu",
+  ESP_LOGI(TAG, "|  Zigbee ACK TO:   %16lu |",
            (unsigned long)m->zigbee_mac_ack_timeouts);
-  ESP_LOGI(TAG, "|  Zigbee CCA Fail: %lu",
+  ESP_LOGI(TAG, "|  Zigbee CCA Fail: %16lu |",
            (unsigned long)m->zigbee_cca_failures);
-  ESP_LOGI(TAG, "|  Wi-Fi RSSI Avg:  %d dBm", m->wifi_rssi_avg_dbm);
-  ESP_LOGI(TAG, "|  Wi-Fi MCS Rate:  %u", (unsigned)m->wifi_mcs_rate);
+  ESP_LOGI(TAG, "|  Wi-Fi RSSI Avg:  %12d dBm |", (int)m->wifi_rssi_avg_dbm);
+  ESP_LOGI(TAG, "|  Wi-Fi MCS Rate:  %16u |", (unsigned)m->wifi_mcs_rate);
   ESP_LOGI(TAG, "+--------------------------------------+");
 }

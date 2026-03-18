@@ -12,6 +12,7 @@
 *.swo
 *.bak
 *.tmp
+tmpclaude-*
 
 # Log files
 *.log
